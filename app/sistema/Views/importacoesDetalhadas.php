@@ -47,6 +47,6 @@
 
     ?>
 
- 
-    <a href="importacoesfeitas.php?Nome = <?php echo $usuario ?>"><button>Voltar para importações feitas</button></a>
+
+    <a href="<?php echo URLSISTEMA; ?>importacoes-feitas/index"><button>Voltar para importações feitas</button></a>
     
