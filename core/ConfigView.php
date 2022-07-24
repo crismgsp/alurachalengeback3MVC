@@ -18,12 +18,7 @@ class ConfigView
         
     }
 
-    /**
-     * Carregar a view login, verificar se o arquivo existe e carregar caso exista
-     * Se nao existir para o carregamento e apresenta mensagem de erro
-     *
-     * @return void
-     */
+   
     public function loadViewLogin(): void
     {
         if(file_exists('app/' .$this->nameView . '.php')) {
@@ -37,12 +32,7 @@ class ConfigView
         }
     }
 
-    /**
-     * Carregar a view, verificar se o arquivo existe e carregar caso exista
-     * Se nao existir para o carregamento e apresenta mensagem de erro, a unica diferença desta view para a loadviewlogin é que esta carrega o menu
-     *
-     * @return void
-     */
+  
     public function loadView(): void
     {
         if(file_exists('app/' .$this->nameView . '.php')) {
