@@ -1,0 +1,14 @@
+{
+    "description": "Refatorando projeto que eu tinha feito em outro backend",
+    "authors": [{
+        "name": "Cristina Carvalho Gomes",
+        "email":"crismgsp@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core",
+            "App\\": "app",
+            "Sistema\\": "app/sistema"
+        }
+    }
+}

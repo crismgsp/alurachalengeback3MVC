@@ -1,0 +1,273 @@
+/* pagina inicial */
+
+#cabecalho{
+	width: 100%;
+	display: inline-block;
+    text-align: center;
+	text-decoration-color: aquamarine;
+}
+
+#bemvindo {
+	width: 80%;
+	display: inline-block;
+}
+
+#acesso {
+    width: 50vw;
+    background-color: rgba(112, 128, 122, 0.284);
+    padding: 10vw;
+    padding-left: 20vw;
+    margin-left: 10vw;
+}
+
+
+#botaologin {
+	display: inline-block;
+	background-color: rgba(0, 0, 255, 0.719);
+	border-style: solid;
+    border-color:rgba(12, 12, 34, 0.81);
+	color: #ffffff;
+	padding: 0.8vh;
+    border-radius: 15px;
+
+}
+
+#botaoacesso {
+	display: inline-block;
+	background-color: rgba(0, 0, 255, 0.719);
+	border-style: solid;
+    border-color:rgba(12, 12, 34, 0.81);
+	color: #ffffff;
+	padding: 0.5vh;
+    border-radius: 15px;
+
+}
+
+/* style */
+body {
+    background-color: rgba(207, 209, 209, 0.161);
+}
+
+
+
+#titulodiv{
+    display: inline;
+    
+    padding: 1vw;
+    padding-left: 15vw;
+    
+}
+
+#titulosuperior {
+    font-size: 26px;
+}
+
+#botaodiv {
+    display: inline-block;
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 35vw;
+
+}
+
+
+.jumbotron {
+    background-color: rgba(161, 200, 218, 0.464);
+    
+    border-style: solid;
+    border-color: black;
+    
+}
+
+.custom-file {
+    width: 50vw;
+    padding: 0;
+}
+
+.custom-file-input {
+    
+    width: 32vw;
+}
+
+#tabelas {
+    display: flex;
+    width: 60%;
+    
+}
+
+#tabela1{
+    
+    display: block;
+   
+    
+}
+
+#tabela2 {
+    
+   display: block;
+}
+
+/* login */
+
+#iniciosessao {
+	width: 40%;
+	background-color: rgba(82, 205, 164, 0.682);
+	padding-left: 10vw;
+	padding-top: 15vh;
+	padding-bottom: 5vh;
+    margin-left: 15vw;
+    margin-top: 12vh;
+	
+}
+
+#email {
+	margin: 1vh;
+}
+
+#senha {
+	margin: 1vh;
+}
+
+/* usuarios */
+
+#titulo {
+    
+    text-align: center;
+}
+
+#novo {
+	background-color: rgba(18, 141, 42, 0.501);
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+
+}
+
+#editar {
+    background-color: rgba(255, 255, 0, 0.544);
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+}
+
+#remover {
+    background-color: rgba(255, 0, 0, 0.602);
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+}
+
+#logout {
+	background-color: rgba(57, 6, 160, 0.602);
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+}
+
+/*pagina de exclusao */
+
+header{
+	background: #ffffff;
+	padding: 1vh 0;
+}
+
+#divexclusao {
+    padding-left: 10vw;
+    padding-top: 10vh;
+
+}
+
+#mudastatuss {
+    background-color: red;
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+
+}
+
+/*pagina de exclusao */
+
+#diveditar {
+    padding-left: 10vw;
+    padding-top: 10vh;
+    
+
+}
+
+#textoedicao {
+    width: 50vw;
+    padding-left: 20vw;
+}
+
+.botaoaedita {
+    background-color: yellow;
+	border-style: solid;
+    border-color: rgba(0, 0, 0, 0.642);
+	color:black;
+	padding: 0.5vh;
+    border-radius: 15px;
+}
+
+/*pagina de importacao */
+
+#titulodiv {
+    
+    width: 100vw;
+    margin-left: 13vw;
+    display: inline-block;
+}
+
+#titulosuperior {
+    width: 30vw;
+    
+    align-items: center;
+    
+}
+
+
+.detalhaimportacao {
+    background-color: rgba(0, 174, 255, 0.575);
+    padding: 0;
+    color: black;
+
+}
+
+#cabecalho {
+    display: inline-block;
+    width: 25%;
+}
+
+.logout {
+    display: inline-block;
+    width: 25%;
+}
+
+.caixa {
+	display: inline-block;
+	padding-top: 10vh;
+}
+
+
+.menu {
+    padding-bottom: 1vh;
+}
+
+
+
+nav a {
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
