@@ -23,12 +23,12 @@
             <form method="POST" action="" id="form-login">
                 <?php 
                 $email = "";
-                $senha = "";
+                $Senha= "";
                 if(isset($valorForm['email'])){
                     $user = $valorForm['email'];
                     }
-                 if(isset($valorForm['senha'])){
-                    $password= $valorForm['senha'];
+                 if(isset($valorForm['Senha'])){
+                    $Senha= $valorForm['Senha'];
                 }
             
                 ?>
@@ -38,8 +38,8 @@
             
                   
                 <label>Senha: </label>
-                <input type="password" name="password" id="senha" placeholder="Digite a senha" autocomplete="on"
-                value="<?php echo $senha; ?>"><br><br>
+                <input type="password" name="Senha" id="Senha" placeholder="Digite a senha" autocomplete="on"
+                value="<?php echo $Senha; ?>"><br><br>
             
                 <button type="submit" name="SendLogin" value="Acessar">Acessar</button>
             

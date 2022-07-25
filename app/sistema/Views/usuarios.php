@@ -64,13 +64,13 @@ if(isset($this->data['form'])) {
                 $Senha = "";
                 
                 if(isset($valorForm['Senha'])){
-                    $password= $valorForm['Senha'];
+                    $Senha= $valorForm['Senha'];
                 }
 
                 ?> 
 
                 <label>Senha:</label>
-                <input type="password" name="Senha" id="password" placeholder="Digite a senha"
+                <input type="password" name="Senha" id="Senha" placeholder="Digite a senha"
                 value="<?php echo $Senha; ?>" required><br><br>
             
             

@@ -18,12 +18,9 @@ class ModLogin
     {
         
         $this->data = $data;
-        
 
         $viewUser = new \Sistema\Models\helper\ModRead();
-      
-
-        //retorna somente as colunas indicadas
+     
         $viewUser->fullRead("SELECT id, Nome,  Email, Senha, Statuss FROM usuarios WHERE Email
         =:email LIMIT :limit", "email={$this->data['email']}&limit=1");
 
@@ -33,7 +30,7 @@ class ModLogin
         //se resultBd for true existe o usuario, entao precisa validar a senha
         if($this->resultBd){
             $this->valStatus();
-            //$this->valPassword(); vai ser instanciado dentro do metodo acima caso o usuario tenha permissao 
+            
         }else{
             $_SESSION['msg'] = "<p style='color: #f00'>Erro: Usuário ou senha incorreta</p>";
             $this-> result = false;
@@ -57,9 +54,16 @@ class ModLogin
         
     private function valSenha()
     {
+        //var_dump($this->resultBd[0]);
+       // exit();
 
-        if(password_verify($this->data['password'], $this->resultBd[0]['Senha'])) {
-            
+        //var_dump((password_verify($this->data['password'], $this->resultBd[0]['Senha'])));
+        //exit();
+       
+
+        if(password_verify($this->data['Senha'], $this->resultBd[0]['Senha'])) {
+                       
+
             $_SESSION['user_id'] = $this->resultBd[0]['id'];
             $_SESSION['user_email'] = $this->resultBd[0]['Email'];
             $_SESSION['user_name'] = $this->resultBd[0]['Nome'];
@@ -67,6 +71,8 @@ class ModLogin
             $this->result = true;
             
         }else{
+            
+
             $_SESSION['msg'] = "<p style='color: #f00'>Erro: Usuario ou senha incorreta</p>";
             $this-> result = false;
             

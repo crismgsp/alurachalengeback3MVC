@@ -59,6 +59,8 @@ class ModExclusaoLogica
         
         if($this->id === 1) {
             $_SESSION['msg'] = "<p style= 'color: #f00;'>o Usuario Admin não pode ser excluido</p>";
+        } elseif($_SESSION['id' === $this->id]) {
+            $_SESSION['msg'] = "<p style= 'color: #f00;'>Você não pode se excluir</p>";
         } else{
                        
             //assim funcionou...coloquei so o que quis mudar na edicao dentro da variavel que sera passada como parametro para mudança
