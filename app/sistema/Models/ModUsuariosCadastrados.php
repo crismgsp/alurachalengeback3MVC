@@ -2,10 +2,7 @@
 
 namespace Sistema\Models;
 
-/**
- * classe responsavel por receber dados dos usuarios cadastrados no banco de dados, é instanciada no controller ListUsers para que 
- * ele mostre estes usuários
- */
+
 class ModUsuariosCadastrados
 {
     
@@ -35,7 +32,7 @@ class ModUsuariosCadastrados
     {
         
         $this->parseString = "";
-        //instancia o helper generico para obter os dados do banco de dados, ele quer ordernar de forma decrescente pra aparecer os ultimos inseridos primeiro
+        
         $listarUsuarios = new \Sistema\Models\helper\ModRead();
         $listarUsuarios->fullRead("SELECT id, Nome, Email, Statuss FROM usuarios", $this->parseString);
 
