@@ -76,7 +76,7 @@ class CarregarPgAdm
      //observacao: estes nomes das paginas publicas(acima) ou privadas(abaixo) sao os nomes dos controllers
      private function pgPrivate(): void
      {
-        $this->listPgPrivate = ["Importacoes", "ImportacoesFeitas", "ImportacoesDetalhadas", "Usuarios"];
+        $this->listPgPrivate = ["Importacoes", "ImportacoesFeitas", "ImportacoesDetalhadas", "Usuarios", "UsuariosCadastrados"];
         if(in_array($this->urlController, $this->listPgPrivate)){
             
             $this->verificaLogin();
