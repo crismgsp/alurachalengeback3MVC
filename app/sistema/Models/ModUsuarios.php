@@ -38,20 +38,20 @@ class ModUsuarios
 
         $edit = null;
         $id = null;
-        //instancia a classe que valida o email e na outra linha instancia o metodo que ta dentro desta classe
-        $valEmail = new \App\adms\Models\helper\AdmsValEmail();
-        $valEmail->validateEmail($this->data['email']);
+        
+        $valEmail = new \Sistema\Models\helper\ModValidaEmail();
+        $valEmail->validaEmail($this->data['Email']);
 
-        //instancia a classe e metodo  que validam que ainda nao tem o email ser cadastrado no BD 
-        $valEmailSingle = new \App\adms\Models\helper\AdmsValEmailSingle();
-        $valEmailSingle->validateEmailSingle($this->data['email'], $edit, $id);
+       
+        $valEmailUnico = new \Sistema\Models\helper\ModValidaEmail();
+        $valEmailUnico->validaEmailUnico($this->data['Email'], $edit, $id);
 
-        $valPassword = new \App\adms\Models\helper\AdmsValPassword();
-        $valPassword->validatePassword($this->data['password']);
+        $valSenha = new \Sistema\Models\helper\ModValidaSenha();
+        $valSenha->validaSenha($this->data['Senha']);
 
-        if($valEmail->getResult() and ($valEmailSingle->getResult()) and ($valPassword->getResult())){
+        if($valEmail->getResult() and ($valEmailUnico->getResult()) and ($valSenha->getResult())){
             
-            $this->add();
+            $this->adiciona();
         }else{
             $this->result = false;
         }
@@ -59,15 +59,15 @@ class ModUsuarios
     }
     
   
-    private function add(): void
+    private function adiciona(): void
     {
         $this->data['Senha'] = password_hash($this->data['password'], PASSWORD_DEFAULT);
         
-        $createUser = new \Sistema\Models\helper\ModInsert();
-        $createUser->exeCreate("usuarios", $this->data);
+        $criaUsuario = new \Sistema\Models\helper\ModInsert();
+        $criaUsuario->exeCreate("usuarios", $this->data);
 
         
-        if($createUser->getResult()){
+        if($criaUsuario->getResult()){
             $_SESSION['msg'] = "<p style= 'color: green;'>Usuario cadastrado com sucesso.</p>";
             $this->result = true;
         }else{
