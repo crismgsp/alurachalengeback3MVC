@@ -122,7 +122,7 @@ if(isset($this->data['form'])) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($agenciasuspeitasmes as $agencia) : ?>
+        <?php foreach ($this->data['agenciasuspeita'] as $agencia) : ?>
             <tr>
                 <td><?php echo $agencia['Banco']; ?></td>
                 <td><?php echo $agencia['Agencia']; ?></td>

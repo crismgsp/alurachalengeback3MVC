@@ -41,14 +41,13 @@ class ModAnaliseTransacoes
      */
     public function contasuspeita(): void
     {
-        //o professor nao fez isso..to faendo pq tava dando erro...pedindo 2 argumentos em fullRead ai criei o parseString e coloquei vazio
-        //se nao funcionar vou criar um fullReadSemParse
+        
         $this->parseString = "";
 
         
         $mesescolhido = $_POST['selecao'];  
 
-        //instancia o helper generico para obter os dados do banco de dados, ele quer ordernar de forma decrescente pra aparecer os ultimos inseridos primeiro
+        
         $contassuspeitas = new \Sistema\Models\helper\ModRead();
         $contassuspeitas->fullRead("SELECT BancoOrigem as Banco, AgenciaOrigem as Agencia, ContaOrigem as Conta, Sum(Valor) as Soma FROM transacoes WHERE Mes = 
         '$mesescolhido' GROUP BY ContaOrigem, BancoOrigem, AgenciaOrigem", $this->parseString);
@@ -68,5 +67,10 @@ class ModAnaliseTransacoes
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!!!</p> nao é aqui que ta acessando  o erro..linha 49 admslistusers";
             $this->result = false;
         }
+    }
+
+    public function transacaosuspeita()
+    {
+        
     }
 }

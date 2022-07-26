@@ -11,6 +11,7 @@ class AnaliseTransacoes
     private $mesescolhido;
     private $dataForm;
     private $contasuspeita;
+    private $agenciasuspeitatotal;
 
     public function index()
     {
@@ -29,11 +30,13 @@ class AnaliseTransacoes
 
                 $this->data['contasuspeita2'] = $contasuspeita->getResultBd2();
 
-                $this->data['contasuspeita'] = array_merge($this->data['contasuspeita1'], $this->data['contasuspeita2']);
+                $this->data['contas'] = array_merge($this->data['contasuspeita1'], $this->data['contasuspeita2']);
+
+                //parte das contas suspeitas
 
                 $contasuspeita1 = array();
 
-                foreach($this->data['contasuspeita'] as $dados) {
+                foreach($this->data['contas'] as $dados) {
                     $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
                     if (!array_key_exists($chave, $contasuspeita1)) {
                         $contasuspeita1[$chave] = array( 
@@ -71,13 +74,51 @@ class AnaliseTransacoes
 
             $this->data['contasuspeita'] = $this->contasuspeita;
             
-            //var_dump( $this->data['contasuspeita']);
-            //exit();
+            //parte das agencias suspeitas
+
+            $agenciasuspeita1 = array();
+
+            foreach($this->data['contas'] as $dados) {
+                $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
+                if (!array_key_exists($chave, $agenciasuspeita1)) {
+                    $agenciasuspeita1[$chave] = array( 
+                        'Banco' => $dados['Banco'],
+                        'Agencia' => $dados['Agencia'],
+                        'Conta' => $dados['Conta'],
+                        'Soma' => $dados['Soma'],
+                        
+                    );
+                }else{
+                    $agenciasuspeita1[$chave] = array (
+                        'Banco' => $dados['Banco'],
+                        'Agencia' => $dados['Agencia'],
+                        'Conta' => $dados['Conta'],
+                        'Soma' => $agenciasuspeita1[$chave]['Soma'] + $dados['Soma'],
+                    );
+                }
+            }
+           
+         
+   
+           $agenciasuspeitatotal = array();
+   
+           foreach($agenciasuspeita1 as $suspeita ) {
+               $soma = $suspeita['Soma'];
+               if($soma > 1000000000) {
+                   array_push($agenciasuspeitatotal, $suspeita);
+               }
+           }
+
+           
+
+           $this->data['agenciasuspeita'] = $agenciasuspeitatotal;
+
            
                 
             }else{
                     
                 $this->data['contasuspeita'] = [];
+                $this->data['agenciasuspeita'] = [];
             }
                     
         
