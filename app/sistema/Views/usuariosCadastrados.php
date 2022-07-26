@@ -9,7 +9,7 @@ if(isset($_SESSION['msg'])){
 
 <h1 id="titulo">USUÁRIOS CADASTRADOS</h1>
 
-    <a href="<?php echo URLSISTEMA; ?>usuarios/index"> <button id="botaoacesso">Usuarios</button></a>
+    
 
     <div class="tabelausuarios">
         <table class="table">
@@ -50,7 +50,7 @@ if(isset($_SESSION['msg'])){
                     <td><?php echo $usuario['id'];?></td>
                     <td><?php echo $usuario['Nome'];?></td>
                     <td><?php echo $usuario['Email'];?></td>
-                    <a href="<?php echo URLSISTEMA; ?>usuarios/index"> <button id="botaoacesso">Usuarios</button></a>
+                    
                     <td><a href="<?php echo URLSISTEMA; ?>editar-usuario/index/<?php echo $usuario['id']?>"> <button id="editar">Editar</button></a>          
                     <a href="<?php echo URLSISTEMA; ?>excluir-usuario/index/<?php echo $usuario['id']?>"> <button id="excluir">Excluir</button></a>
                     

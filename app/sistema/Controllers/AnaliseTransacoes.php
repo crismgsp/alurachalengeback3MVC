@@ -4,7 +4,7 @@ namespace app\sistema\Controllers;
 
 
 
-class UsuariosCadastrados
+class AnaliseTransacoes
 {
    
     private $data;
@@ -12,6 +12,8 @@ class UsuariosCadastrados
     public function index()
     {
         
+        /*
+        ainda vou instanciar a model que irei criar baseada na classesesimilares analise financeira
         $listarusuarios = new \Sistema\Models\ModUsuariosCadastrados();
         $listarusuarios->listarUsuarios();
         if($listarusuarios->getResult()){
@@ -21,10 +23,10 @@ class UsuariosCadastrados
         }else{
             
             $this->data['listarusuarios'] = [];
-        } 
+        } */
 
     
-        $loadView = new \Core\ConfigView("sistema/Views/usuariosCadastrados", $this->data);
+        $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
         
         $loadView->loadView();
     }
