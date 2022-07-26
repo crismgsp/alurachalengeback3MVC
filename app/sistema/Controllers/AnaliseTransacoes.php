@@ -8,22 +8,31 @@ class AnaliseTransacoes
 {
    
     private $data;
+    private $mesescolhido;
+    private $dataForm;
 
     public function index()
     {
+        $data = [];
+        $this->data = $data;
+        $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         
-        /*
-        ainda vou instanciar a model que irei criar baseada na classesesimilares analise financeira
-        $listarusuarios = new \Sistema\Models\ModUsuariosCadastrados();
-        $listarusuarios->listarUsuarios();
-        if($listarusuarios->getResult()){
-            
-            $this->data['listarusuarios'] = $listarusuarios->getResultBd();
-           
-        }else{
-            
-            $this->data['listarusuarios'] = [];
-        } */
+        if(!empty($this->dataForm['enviaMes'])) {
+            $contasuspeita = new \Sistema\Models\ModAnaliseTransacoes();
+            $contasuspeita->contaSuspeita();
+            if($contasuspeita->getResult()){
+                
+                var_dump($contasuspeita);
+                exit();
+               
+                $this->data['listarusuarios'] = $listarusuarios->getResultBd();
+               
+            }else{
+                
+                $this->data['listarusuarios'] = [];
+            }
+        }
+               
 
     
         $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);

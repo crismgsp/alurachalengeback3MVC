@@ -16,7 +16,7 @@ if(isset($this->data['form'])) {
     <input name="selecao"></input>    
 </form>  -->
 
-<form name="selecao" action="analisetransacoes.php" method="POST">
+<form name="selecao" action="" method="POST">
 
     <label>Escolha um mês pra analise</label>
 
@@ -36,7 +36,7 @@ if(isset($this->data['form'])) {
 
     </select>
 
-    <input type="submit" value="Após selecionar clique aqui" />
+    <input type="submit" name="enviaMes" value="Após selecionar clique aqui" />
 
 </form>
 
