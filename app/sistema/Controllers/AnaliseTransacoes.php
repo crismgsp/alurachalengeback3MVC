@@ -10,6 +10,7 @@ class AnaliseTransacoes
     private $data;
     private $mesescolhido;
     private $dataForm;
+    private $contasuspeita;
 
     public function index()
     {
@@ -20,21 +21,26 @@ class AnaliseTransacoes
         if(!empty($this->dataForm['enviaMes'])) {
             $contasuspeita = new \Sistema\Models\ModAnaliseTransacoes();
             $contasuspeita->contaSuspeita();
-            if($contasuspeita->getResult()){
-                
-                var_dump($contasuspeita);
-                exit();
-               
-                $this->data['listarusuarios'] = $listarusuarios->getResultBd();
-               
-            }else{
-                
-                $this->data['listarusuarios'] = [];
-            }
-        }
-               
 
-    
+            echo "tentando acessar this-.contasuspeita do controller";
+            var_dump($this->contasuspeita);
+            
+            //if($contasuspeita->getResult()){
+                
+                           
+            $this->data['contasuspeita'] = $this->contasuspeita;
+
+            var_dump( $this->contasuspeita);
+            exit();
+
+            
+               
+        }//else{
+                
+            //    $this->data['contasuspeita'] = [];
+            //}
+                
+       
         $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
         
         $loadView->loadView();

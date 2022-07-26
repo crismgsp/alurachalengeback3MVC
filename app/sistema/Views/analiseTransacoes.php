@@ -65,7 +65,7 @@ if(isset($this->data['form'])) {
     </thead>
     <tbody>
         
-        <?php foreach ($contassuspeitas as $contas) : ?>
+        <?php foreach ($this->transacoessuspeitas as $contas) : ?>
             <tr>
                 <td><?php echo $contas['BancoOrigem']; ?></td>
                 <td><?php echo $contas['AgenciaOrigem']; ?></td>
@@ -98,7 +98,7 @@ if(isset($this->data['form'])) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($contassuspeitasmes as $contames) : ?>
+        <?php foreach ($this->data['contasuspeita']  as $contames) : ?>
             <tr>
                 <td><?php echo $contames['Banco']; ?></td>
                 <td><?php echo $contames['Agencia'];  ?></td>

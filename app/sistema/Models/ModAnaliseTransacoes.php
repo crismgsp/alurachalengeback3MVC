@@ -92,18 +92,57 @@ class ModAnaliseTransacoes extends ModConn
         $contasuspeitadestino= $contasuspeitadestino->fetchAll(PDO::FETCH_ASSOC);
        
 
-        $contasuspeita = array_merge($contasuspeitaorigem, $contasuspeitadestino);  
+        $dadostotais = array_merge($contasuspeitaorigem, $contasuspeitadestino);
 
-        var_dump($contasuspeita);
-        exit();
+        $this->dados = $dadostotais;
+        
+        
+        $contasuspeita1 = array();
+
+         foreach($dadostotais as $dados) {
+             $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
+             if (!array_key_exists($chave, $contasuspeita1)) {
+                 $contasuspeita1[$chave] = array( 
+                     'Banco' => $dados['Banco'],
+                     'Agencia' => $dados['Agencia'],
+                     'Conta' => $dados['Conta'],
+                     'Soma' => $dados['Soma'],
+                     
+                );
+             }else{
+                 $contasuspeita1[$chave] = array (
+                     'Banco' => $dados['Banco'],
+                     'Agencia' => $dados['Agencia'],
+                     'Conta' => $dados['Conta'],
+                     'Soma' => $contasuspeita1[$chave]['Soma'] + $dados['Soma'],
+                 );
+             }
+         }
+          
+        //echo "var dump da conta suspeita1"; 
+        //var_dump($contasuspeita1); 
+
+        //echo "var dump da conta suspeita1 Soma"; 
+        //var_dump($contasuspeita1['Soma']);
+      
+        $contasuspeita = array();
+        
+        foreach($contasuspeita1 as $dados) {
+            $soma = intval($dados['Soma']);
+
+            if($soma > 1000000) {
+                array_push($contasuspeita, $dados);
+            }
+        }
+
         
         $this->contasuspeita = $contasuspeita;
 
-    
-        $this->resultBd = $contasuspeita->getResult();
+        var_dump($this->contasuspeita);
 
-        var_dump($this->resultBd);
-
+        
+        return $this->contasuspeita;
+   
     }    
         
         /*if($this->resultBd){
