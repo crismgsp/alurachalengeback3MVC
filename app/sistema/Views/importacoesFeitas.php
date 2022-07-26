@@ -23,6 +23,8 @@ if(isset($_SESSION['msg'])){
     
     <p><?php echo "Bem vindo " . $_SESSION['user_name'];?></p> <p><?php echo 'Hoje é '. date('d/m/Y ', $_SESSION['time']);?></p>
 
+    
+
         <div id="informacoes">
 
             <div id="cabecalho">
