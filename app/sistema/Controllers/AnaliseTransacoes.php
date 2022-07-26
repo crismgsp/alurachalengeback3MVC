@@ -21,28 +21,72 @@ class AnaliseTransacoes
         if(!empty($this->dataForm['enviaMes'])) {
             $contasuspeita = new \Sistema\Models\ModAnaliseTransacoes();
             $contasuspeita->contaSuspeita();
-
-            echo "tentando acessar this-.contasuspeita do controller";
-            var_dump($this->contasuspeita);
+                  
             
-            //if($contasuspeita->getResult()){
-                
+            if($contasuspeita->getResult()){
                            
-            $this->data['contasuspeita'] = $this->contasuspeita;
+                $this->data['contasuspeita1'] = $contasuspeita->getResultBd();
 
-            var_dump( $this->contasuspeita);
-            exit();
+                $this->data['contasuspeita2'] = $contasuspeita->getResultBd2();
+
+                $this->data['contasuspeita'] = array_merge($this->data['contasuspeita1'], $this->data['contasuspeita2']);
+
+                $contasuspeita1 = array();
+
+                foreach($this->data['contasuspeita'] as $dados) {
+                    $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
+                    if (!array_key_exists($chave, $contasuspeita1)) {
+                        $contasuspeita1[$chave] = array( 
+                            'Banco' => $dados['Banco'],
+                            'Agencia' => $dados['Agencia'],
+                            'Conta' => $dados['Conta'],
+                            'Soma' => $dados['Soma'],
+                            
+                        );
+                    }else{
+                        $contasuspeita1[$chave] = array (
+                            'Banco' => $dados['Banco'],
+                            'Agencia' => $dados['Agencia'],
+                            'Conta' => $dados['Conta'],
+                            'Soma' => $contasuspeita1[$chave]['Soma'] + $dados['Soma'],
+                        );
+                    }
+
+         }
+          
+       
+            $contasuspeita = array();
+            
+            foreach($contasuspeita1 as $dados) {
+                $soma = intval($dados['Soma']);
+
+                if($soma > 1000000) {
+                    array_push($contasuspeita, $dados);
+                }
+            }
 
             
-               
-        }//else{
+            $this->contasuspeita = $contasuspeita;
+
+
+            $this->data['contasuspeita'] = $this->contasuspeita;
+            
+            //var_dump( $this->data['contasuspeita']);
+            //exit();
+           
                 
-            //    $this->data['contasuspeita'] = [];
-            //}
-                
-       
-        $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
+            }else{
+                    
+                $this->data['contasuspeita'] = [];
+            }
+                    
         
+            
+        }
+
+        $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
+            
         $loadView->loadView();
-    }
+
+    }    
 }
