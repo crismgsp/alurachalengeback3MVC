@@ -48,17 +48,7 @@ if(isset($this->data['form'])) {
                 <input type="email" name="Email" id="email" placeholder="Digite o email"
                 value="<?php echo $Email; ?>" required><br><br>
 
-                <?php 
-                $Statuss = "";
                 
-                if(isset($valorForm['Statuss'])){
-                    $user= $valorForm['Statuss'];
-                }
-
-                ?>
-                <label>Status:</label>
-                <input type="text" name="Statuss" id="user" placeholder="Digite 1 para ficar com status ativo"
-                value="<?php echo $Statuss; ?>" required><br><br>
 
                 <?php 
                 $Senha = "";
