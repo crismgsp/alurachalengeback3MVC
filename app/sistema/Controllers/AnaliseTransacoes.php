@@ -55,79 +55,98 @@ class AnaliseTransacoes
                         );
                     }
 
-         }
+                }
           
        
-            $contasuspeita = array();
-            
-            foreach($contasuspeita1 as $dados) {
-                $soma = intval($dados['Soma']);
+                $contasuspeita = array();
+                
+                foreach($contasuspeita1 as $dados) {
+                    $soma = intval($dados['Soma']);
 
-                if($soma > 1000000) {
-                    array_push($contasuspeita, $dados);
+                    if($soma > 1000000) {
+                        array_push($contasuspeita, $dados);
+                    }
                 }
-            }
 
             
-            $this->contasuspeita = $contasuspeita;
+                $this->contasuspeita = $contasuspeita;
 
 
-            $this->data['contasuspeita'] = $this->contasuspeita;
-            
-            //parte das agencias suspeitas
+                $this->data['contasuspeita'] = $this->contasuspeita;
+                
+                //parte das agencias suspeitas
 
-            $agenciasuspeita1 = array();
+                $agenciasuspeita1 = array();
 
-            foreach($this->data['contas'] as $dados) {
-                $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
-                if (!array_key_exists($chave, $agenciasuspeita1)) {
-                    $agenciasuspeita1[$chave] = array( 
-                        'Banco' => $dados['Banco'],
-                        'Agencia' => $dados['Agencia'],
-                        'Conta' => $dados['Conta'],
-                        'Soma' => $dados['Soma'],
-                        
-                    );
-                }else{
-                    $agenciasuspeita1[$chave] = array (
-                        'Banco' => $dados['Banco'],
-                        'Agencia' => $dados['Agencia'],
-                        'Conta' => $dados['Conta'],
-                        'Soma' => $agenciasuspeita1[$chave]['Soma'] + $dados['Soma'],
-                    );
+                foreach($this->data['contas'] as $dados) {
+                    $chave = $dados['Banco'].$dados['Agencia'].$dados['Conta'];
+                    if (!array_key_exists($chave, $agenciasuspeita1)) {
+                        $agenciasuspeita1[$chave] = array( 
+                            'Banco' => $dados['Banco'],
+                            'Agencia' => $dados['Agencia'],
+                            'Conta' => $dados['Conta'],
+                            'Soma' => $dados['Soma'],
+                            
+                        );
+                    }else{
+                        $agenciasuspeita1[$chave] = array (
+                            'Banco' => $dados['Banco'],
+                            'Agencia' => $dados['Agencia'],
+                            'Conta' => $dados['Conta'],
+                            'Soma' => $agenciasuspeita1[$chave]['Soma'] + $dados['Soma'],
+                        );
+                    }
                 }
-            }
            
          
    
-           $agenciasuspeitatotal = array();
-   
-           foreach($agenciasuspeita1 as $suspeita ) {
-               $soma = $suspeita['Soma'];
-               if($soma > 1000000000) {
-                   array_push($agenciasuspeitatotal, $suspeita);
-               }
-           }
-
-           
-
-           $this->data['agenciasuspeita'] = $agenciasuspeitatotal;
-
-           
-                
-            }else{
-                    
-                $this->data['contasuspeita'] = [];
-                $this->data['agenciasuspeita'] = [];
-            }
-                    
+                $agenciasuspeitatotal = array();
         
-            
-        }
+                foreach($agenciasuspeita1 as $suspeita ) {
+                    $soma = $suspeita['Soma'];
+                    if($soma > 1000000000) {
+                        array_push($agenciasuspeitatotal, $suspeita);
+                    }
+                }
 
-        $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
-            
-        $loadView->loadView();
+                
 
+                $this->data['agenciasuspeita'] = $agenciasuspeitatotal;
+
+                //parte das transacoes suspeitas
+                    $transacaosuspeita = new \Sistema\Models\ModAnaliseTransacoes();
+                    $transacaosuspeita->transacaosuspeita();
+                        
+                    
+                    if($transacaosuspeita->getResult()){
+                        $this->data['transacaosuspeita'] = $transacaosuspeita->getResultBd();
+
+                        $transacaosuspeita = array();
+
+                        foreach($this->data['transacaosuspeita'] as $dados) {
+                            $valor = $dados['Valor'];
+                            if ($valor > 100000) {
+                                array_push($transacaosuspeita, $dados);
+                            }
+                        }
+                        $this->data['transacaosuspeita'] = $transacaosuspeita;
+
+                        
+                    }else{
+                            
+                        $this->data['contasuspeita'] = [];
+                        $this->data['agenciasuspeita'] = [];
+                        $this->data['transacaosuspeita'] = [];
+                    }
+                        
+            
+                
+            }
+   
+        } 
+    
+            $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
+                
+            $loadView->loadView();
     }    
 }

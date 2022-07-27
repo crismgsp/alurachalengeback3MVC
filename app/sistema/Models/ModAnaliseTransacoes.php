@@ -71,6 +71,22 @@ class ModAnaliseTransacoes
 
     public function transacaosuspeita()
     {
+        $this->parseString = "";
+
         
+        $mesescolhido = $_POST['selecao'];  
+
+        
+        $transacaosuspeita = new \Sistema\Models\helper\ModRead();
+        $transacaosuspeita->fullRead("SELECT * FROM transacoes WHERE Mes = '$mesescolhido'", $this->parseString);
+
+        $this->resultBd = $transacaosuspeita->getResult();
+
+        if($this->resultBd){
+            $this->result = true;
+        }else{
+            $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!!!</p> nao é aqui que ta acessando  o erro..linha 49 admslistusers";
+            $this->result = false;
+        }
     }
 }
