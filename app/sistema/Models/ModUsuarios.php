@@ -63,12 +63,9 @@ class ModUsuarios
 
     {
 
-        var_dump($this->data['Senha']);
         $this->data['Senha'] = password_hash($this->data['Senha'], PASSWORD_DEFAULT);
 
-        var_dump($this->data['Senha']);
-        exit();
-        
+                
         $criaUsuario = new \Sistema\Models\helper\ModInsert();
         $criaUsuario->exeCreate("usuarios", $this->data);
 
