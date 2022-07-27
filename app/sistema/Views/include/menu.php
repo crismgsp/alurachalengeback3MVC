@@ -11,6 +11,8 @@
 
             <a href="<?php echo URLSISTEMA; ?>analise-transacoes/index"> <button id="botaoacesso">Transações suspeitas</button></a>
 
+            <a href="<?php echo URLSISTEMA; ?>importacoes/index"> <button id="botaoacesso">Fazer importações</button></a>
+
             <a href="<?php echo URLSISTEMA; ?>logout/index"><button class="logout">Logout</button></a>
 
         </div>  
