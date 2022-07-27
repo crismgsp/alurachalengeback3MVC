@@ -20,8 +20,8 @@ if(isset($_SESSION['msg'])){
              
 ?>                               
       
-    
-    <p><?php echo "Bem vindo " . $_SESSION['user_name'];?></p> <p><?php echo 'Hoje é '. date('d/m/Y ', $_SESSION['time']);?></p>
+    <br><br>
+    <p><?php echo "Bem vindo " . $_SESSION['user_name'];?></p>
 
     
 
@@ -33,8 +33,7 @@ if(isset($_SESSION['msg'])){
               
             </div>
 
-            
-                
+                            
 
                 <div class="tabela1">
 

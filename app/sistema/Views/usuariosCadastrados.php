@@ -24,25 +24,7 @@ if(isset($_SESSION['msg'])){
             </thead>
             <tbody>
 
-            <?php
-            $url = str_replace("Novo/", "", $_SERVER["REQUEST_URI"]);
-            $explodeurl = explode("=", $url);
-
-                            
-            $usuariomodificado = $explodeurl[1];
-
-            $usuariomodificado1 = str_replace("%20", " ", $usuariomodificado);
-
-            $usuariomodificado2 = str_replace(".php", "", $usuariomodificado1);
             
-            $usuariourl1 = str_replace("%27", " ", $usuariomodificado2);
-
-            
-
-            $usuariourl = substr($usuariourl1, 3, 20);
-
-           
-            ?>
 
                 <?php foreach ($this->data['listarusuarios'] as $usuario) : ?>
             

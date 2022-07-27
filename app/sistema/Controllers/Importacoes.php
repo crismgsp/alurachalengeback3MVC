@@ -14,7 +14,7 @@ class Importacoes
     public function index(): void
     {
         
-        $this->dataForm = $_FILES['file'];
+        
 
         //var_dump($this->dataForm);
 
@@ -23,7 +23,8 @@ class Importacoes
         //troquei o nome do botao a ser clicado pelo nome "name" que apareceu no var_dump que fiz de teste e ai acessou o if
         if(!empty($this->dataForm['name'])) {
 
-                        
+            $this->dataForm = $_FILES['file'];
+            
             $valCsv = new \Sistema\Models\ModImportacoes();
             
             $valCsv->readCsv($this->dataForm);

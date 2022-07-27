@@ -18,6 +18,11 @@ class AnaliseTransacoes
         $data = [];
         $this->data = $data;
         $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+        //coloquei isto aqui pra sumir aquele erro da pagina antes de escolher o mes
+        $this->data['contasuspeita'] = [];
+        $this->data['agenciasuspeita'] = [];
+        $this->data['transacaosuspeita'] = [];
         
         if(!empty($this->dataForm['enviaMes'])) {
             $contasuspeita = new \Sistema\Models\ModAnaliseTransacoes();
@@ -144,9 +149,11 @@ class AnaliseTransacoes
             }
    
         } 
+
+        
     
-            $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
+        $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
                 
-            $loadView->loadView();
+        $loadView->loadView();
     }    
 }

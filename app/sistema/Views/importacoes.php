@@ -41,7 +41,7 @@ if(isset($this->data['form'][0])) {
                         <label class="custom-file-label" for="customFile"></label>
                     </div>
                 
-                    <button type="submit" class="enviar" name="SendCSV">Enviar</button>
+                    <button type="submit" class="file" name="file">Enviar</button>
             </form>
         </div>
 

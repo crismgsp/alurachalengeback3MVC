@@ -1,7 +1,7 @@
 <header>
     <?php 
         
-    $Nome = $_SESSION['Nome'];
+    
              
     ?>                               
         <div class="menu">
