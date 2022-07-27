@@ -1,5 +1,7 @@
 <h1 align="center"><strong>Refatoração do codigo feito no Chalenge Backend 3 da Alura para ficar no padrão MVC</strong></h1>
 
+
+
 (Resumo) O objetivo do chalenge foi criar um sistema com as seguintes opções: parte dos usuários: login e logout de usuarios, um lugar no sistema pra cadastrar, editar e excluir os usuários de forma lógica (sem excluir de verdade, apenas deixar inativo, não pode fazer login). Parte das transações financeiras: No sistema tem que ter um local para fazer upload de arquivos no formato csv (e xml tambem), este arquivo ao passar pelas validações irá ser cadastrado no banco de dados criado para o projeto. Também há uma tela onde é possível ver as importações feitas e um botão em cada linha que direciona para uma tela que detalha cada importação. 
 O projeto original está no repositorio:<br> https://github.com/crismgsp/alurachalengeback3.<br>
 <strong>Refatorei o código dividindo melhor cada parte, para ficar no padrao MVC e usei o composer para facilitar a parte de autoload.</strong>
