@@ -1,10 +1,23 @@
 <h1 align="center"><strong>Refatoração do codigo feito no Chalenge Backend 3 da Alura para ficar no padrão MVC</strong></h1>
 
+<p>Abaixo o link do site deste projeto refatorado</p>
+<p>http://analisesdetransacoesmvc.crismgsp.com/login/index</p><br>
+usuario: admin@email.com.br    senha: 123999 <br>
+
+OBS: meu foco neste projeto não é na parte visual, mas para ficar aceitavel usei um pouco de css inline, no anterior estava<br>
+um pouco melhor esta parte mas pelas mudanças que fiz aqui tive uns probleminhas para acessar os arquivos css separadamente e achei mais<br>
+facil colocar o css inline, tambem uso Bootstrap, mas não sei muito sobre isso, talvez futuramente eu melhore isso, caso haja necessidade de eu aprender mais, no momento preciso focar em outros aprendizados.<br>
+
+<strong>Melhorias em relação ao original:</strong><br>
+Apesar da aparência ter ficado um pouco menos interessante agora, este projeto teve uma correção na lógica de mostrar as agencias suspeitas, para excluir o usuário de forma lógica ficou mais prático e seguro, para criar usuário tirei a opção de inserir o status...e já é colocado automaticamente como ativo (1), ficou mais fácil para outros usuários entenderem o meu código por estar em um padrão mais usado. <strong>Refatorei o código dividindo melhor cada parte, para ficar no padrao MVC e usei o composer para facilitar a parte de autoload.</strong>
 
 
-(Resumo) O objetivo do chalenge foi criar um sistema com as seguintes opções: parte dos usuários: login e logout de usuarios, um lugar no sistema pra cadastrar, editar e excluir os usuários de forma lógica (sem excluir de verdade, apenas deixar inativo, não pode fazer login). Parte das transações financeiras: No sistema tem que ter um local para fazer upload de arquivos no formato csv (e xml tambem), este arquivo ao passar pelas validações irá ser cadastrado no banco de dados criado para o projeto. Também há uma tela onde é possível ver as importações feitas e um botão em cada linha que direciona para uma tela que detalha cada importação. 
+(Resumo) O objetivo do chalenge que participei em maio de 2022 foi criar um sistema com as seguintes opções: parte dos usuários: login e logout de usuarios, um lugar no sistema pra cadastrar, editar e excluir os usuários de forma lógica (sem excluir de verdade, apenas deixar inativo, não pode fazer login). Parte das transações financeiras: No sistema tem que ter um local para fazer upload de arquivos no formato csv (e xml tambem), este arquivo ao passar pelas validações irá ser cadastrado no banco de dados criado para o projeto. Também há uma tela onde é possível ver as importações feitas e um botão em cada linha que direciona para uma tela que detalha cada importação. 
 O projeto original está no repositorio:<br> https://github.com/crismgsp/alurachalengeback3.<br>
-<strong>Refatorei o código dividindo melhor cada parte, para ficar no padrao MVC e usei o composer para facilitar a parte de autoload.</strong>
+e o link para acessar o site do projeto original é:<br>
+https://analisesdetransacoes.crismgsp.com/     <br>
+usuario: admin@email.com.br    senha: 123999 <br>
+
 
 Alguns arquivos mais genericos, aproveitei de um curso que estou fazendo e o link<br>
 deste curso que é muito completo e o professor ensina muitas coisas detalhadamente e explica o porque de se fazer assim é:<br>
@@ -12,9 +25,7 @@ https://celke.com.br/curso/sistema-administrativo-com-nivel-de-acesso <br>
 Os arquivos específicos deste projeto aproveitei os do projeto que eu fiz anteriormente,  apenas alterei para ficar no padrao MVC<br>
 utilizando conhecimentos aqduiridos neste curso acima, na plataforma da Alura, e em pesquisas na internet.<br>
 <br>
-OBS: meu foco neste projeto não é na parte visual, mas para ficar aceitavel usei um pouco de css inline, no anterior estava<br>
-um pouco melhor esta parte mas pelas mudanças que fiz aqui tive uns probleminhas para acessar os arquivos css separadamente e achei mais<br>
-facil colocar o css inline, tambem uso Bootstrap, mas não sei muito sobre isso, talvez futuramente eu melhore isso, caso haja necessidade de eu aprender mais.<br>
+
 
 
 
