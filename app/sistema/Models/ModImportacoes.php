@@ -49,7 +49,7 @@ class ModImportacoes
         $this->datap = $datap;
 
         if($extensao != "csv") {
-            echo "Extensao invalida";
+            $_SESSION['msg'] = "<p style= 'color: red;'>Extensão inválida</p>"; 
         }else{
             $this->result = true;
             $this-> checaDataBd();
@@ -86,7 +86,7 @@ class ModImportacoes
             }    
             
             if (in_array($this->datap, $datasbanco)) {
-                echo("Já tem esta data no banco");    
+                $_SESSION['msg'] = "<p style= 'color: red;'>Já tem esta data no banco</p>";    
             } else {
                 $this->result = true;
                 $this->importaCsv();
@@ -129,9 +129,11 @@ class ModImportacoes
                 $inserirTabela->exeCreate("transacoes", $this->dados);
 
                 if($inserirTabela->getResult()){
+                    $_SESSION['msg'] = "<p style= 'color: green;'>Arquivo importado com sucesso.</p>";
                     $this->result = true;
 
                 }else {
+                    $_SESSION['msg'] = "<p style= 'color: red;'>Arquivo não importado.</p>";
                     $this->result = false;
 
                 }

@@ -13,7 +13,7 @@ if(isset($this->data['form'][0])) {
 
 ?>
 
-        <h1>Editar Usuário</h1>
+        <h1>Excluir Usuário</h1>
         <?php
 
                

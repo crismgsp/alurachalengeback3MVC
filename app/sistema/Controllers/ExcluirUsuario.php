@@ -19,27 +19,30 @@ class ExcluirUsuario
         
         $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         //se o id for diferente de vazio e o botao para enviar os dados de edicao do usuario não foi clicado
-        if((!empty($id)) and (empty($this->dataForm['Exclusaologica']))){
+        if((!empty($id)) and (!empty($this->dataForm['Exclusaologica']))){
             $this->id = (int) $id;
             $viewUser= new \Sistema\Models\ModExclusaoLogica();
             $viewUser->viewUser($this->id);
             if($viewUser->getResult()){
                 $this->data['form'] = $viewUser->getResultBd();
                
-                $this->viewEditUser();
+                //$this->viewEditUser();
             }else{
                 $urlRedirect = URLSISTEMA. "usuarios/index";
                 header("Location: $urlRedirect");
                 
             }  
 
-        } else{
+        } //else{
             
-            $this->editUser();
-        }
+            //$this->editUser();
+        //}
+
+        $loadView = new \Core\ConfigView("sistema/Views/excluirUsuario", $this->data);
+        $loadView->loadView(); 
     }    
 
-
+/*
     private function viewEditUser(): void
     {
         $loadView = new \Core\ConfigView("sistema/Views/excluirUsuario", $this->data);
@@ -68,7 +71,7 @@ class ExcluirUsuario
             $urlRedirect = URLSISTEMA . "editarUsuario/index";
             header("Location: $urlRedirect");
         } 
-    }
+    } */
         
         
 }

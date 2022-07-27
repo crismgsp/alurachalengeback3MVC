@@ -32,11 +32,11 @@ class Importacoes
                         
             if($valCsv->getResult()){
                
-                $_SESSION['msg'] = "<p style= 'color: green;'>Arquivo importado com sucesso.</p>";
+                //$_SESSION['msg'] = "<p style= 'color: green;'>Arquivo importado com sucesso.</p>";
                 $this->result = true;
                 
             }else {
-                echo "Arquivo não importado";
+                $this->result = false;
             }
            
         }

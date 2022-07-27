@@ -43,8 +43,7 @@ class ModExclusaoLogica
         $this->resultBd = $viewUser->getResult();
         
         if($this->resultBd){
-                        
-            
+            $this->result = true;
             $this->exclusaologica();
 
         }else{
@@ -57,7 +56,7 @@ class ModExclusaoLogica
     public function exclusaologica(): void
     {
        
-
+        
         if($this->id === 1) {
             $_SESSION['msg'] = "<p style= 'color: #f00;'>o Usuario Admin não pode ser excluido</p>";
         }elseif(($_SESSION['user_id']) == ($this->id)) {
