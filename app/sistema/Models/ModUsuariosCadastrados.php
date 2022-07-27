@@ -34,7 +34,7 @@ class ModUsuariosCadastrados
         $this->parseString = "";
         
         $listarUsuarios = new \Sistema\Models\helper\ModRead();
-        $listarUsuarios->fullRead("SELECT id, Nome, Email, Statuss FROM usuarios", $this->parseString);
+        $listarUsuarios->fullRead("SELECT id, Nome, Email, Statuss FROM usuarios WHERE Statuss = '1'", $this->parseString);
 
         $this->resultBd = $listarUsuarios->getResult();
         
