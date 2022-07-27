@@ -38,14 +38,14 @@ está no formato csv e se ainda não existe a data da primeira linha do arquivo 
 
 
 <p align="center"><strong>Ferramentas e linguagens utilizadas até agora:</strong></p>
-<p><img src='/assets/imagens/php.png' alt="simbolo PHP criado por Freepik - Flaticon"/> PHP </p>
-<p><img src='/assets/imagens/html.png' alt="simbolo HTML criado por Freepik - Flaticon"/> HTML </p>
-<p><img src='/assets/imagens/css.png' alt="simbolo CSS criado por Freepik - Flaticon"/> CSS </p>
-<p><img src='/assets/imagens/mariadb.png'alt="simbolo MariaDB"/> Banco de dados MariaDB </p>
-<p><img src='/assets/imagens/phpmyadmin.png' alt=" Imagem relacionada a PHPMyAdmin"/>PHPMyAdmin (pra acessar o MariaDB)  </p>
-<p><img src='/assets/imagens/vscode.png' alt="simbolo VSCODE"/> Visual Studio Code </p>
-<p><img src='/assets/imagens/xampp.png' alt="simbolo XAMPP"/> XAMPP <br> </p>
-<p><img src='/assets/imagens/composer.png' alt="simbolo XAMPP"/> Composer <br> </p>
+<p><img src='app/sistema/assets/imagens/php.png' alt="simbolo PHP criado por Freepik - Flaticon"/> PHP </p>
+<p><img src='app/sistema/assets/imagens/html.png' alt="simbolo HTML criado por Freepik - Flaticon"/> HTML </p>
+<p><img src='app/sistema/assets/imagens/css.png' alt="simbolo CSS criado por Freepik - Flaticon"/> CSS </p>
+<p><img src='app/sistema/assets/imagens/mariadb.png'alt="simbolo MariaDB"/> Banco de dados MariaDB </p>
+<p><img src='app/sistema/assets/imagens/phpmyadmin.png' alt=" Imagem relacionada a PHPMyAdmin"/>PHPMyAdmin (pra acessar o MariaDB)  </p>
+<p><img src='app/sistema/assets/imagens/vscode.png' alt="simbolo VSCODE"/> Visual Studio Code </p>
+<p><img src='app/sistema/assets/imagens/xampp.png' alt="simbolo XAMPP"/> XAMPP <br> </p>
+<p><img src='app/sistema/assets/imagens/composer.png' alt="simbolo XAMPP"/> Composer <br> </p>
 
 
 
