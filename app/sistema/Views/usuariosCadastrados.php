@@ -7,12 +7,16 @@ if(isset($_SESSION['msg'])){
 
 ?>
 
-<h1 id="titulo">USUÁRIOS CADASTRADOS</h1>
+<br>
+
+<h2 id="titulo" style="text-align:center;">USUÁRIOS CADASTRADOS</h2>
+
+
 
     
 
-    <div class="tabelausuarios">
-        <table class="table">
+    <div class="tabelausuarios" style="padding: 5vw;">
+        <table class="table" style="border: 1px solid darkgreen">
             <thead>
             <tr>
                 <th scope="col">ID</th>

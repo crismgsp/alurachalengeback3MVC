@@ -44,9 +44,9 @@ if(isset($this->data['form'])) {
 
 </div>
 
-<h3>Transacoes Suspeitas</h3>
+<h3 style="text-align:center;">Transações Suspeitas</h3>
 
-<table class="table" >
+<table class="table" style="border: 1px solid blue;" >
     <thead>
         <tr>
             <th scope="col">Banco de Origem</th>
@@ -85,8 +85,10 @@ if(isset($this->data['form'])) {
     </tbody>
 </table>
 
-<h3>Contas Suspeitas</h3>
-<table class="table" >
+<br>
+
+<h3 style="text-align:center; ">Contas Suspeitas</h3>
+<table class="table" style="border: 1px solid blue;">
     <thead>
         <tr>
             <th scope="col">Banco</th>
@@ -111,8 +113,10 @@ if(isset($this->data['form'])) {
     </tbody>
 </table>
 
-<h3>Agencias Suspeitas</h3>
-<table class="table" >
+<br>
+
+<h3 style="text-align:center;">Agências Suspeitas</h3>
+<table class="table" style="border: 1px solid blue;" >
     <thead>
         <tr>
             <th scope="col">Banco</th>
