@@ -21,28 +21,28 @@ if(isset($_SESSION['msg'])){
 ?>                               
       
     <br><br>
-    <p><?php echo "Bem vindo " . $_SESSION['user_name'];?></p>
+    <p style="margin-left: 5vw;"><?php echo "Bem vindo " . $_SESSION['user_name'];?></p>
 
     
 
         <div id="informacoes">
 
             <div id="cabecalho">
-                <h1> Importações realizadas</h1>
+                <h2 style="padding: 4px; padding-left: 6vw;"> Importações realizadas</h2>
 
               
             </div>
 
                             
 
-                <div class="tabela1">
+                <div class="tabela1" style="padding: 4px; padding-left: 5vw;">
 
-                    <table  id="tabela1">    
+                    <table  id="tabela1" style="border: 1px solid #444;">    
                         <thead id="titulo1">
                             <tr id="transacoes">
-                                <th scope="col">Data Transações</th>
-                                <th scope="col">Data Importações</th>
-                                <th scope="col">Visualizar detalhes</th>
+                                <th scope="col" style="border: 1px solid #444; padding: 3px;">Data Transações    </th>
+                                <th scope="col" style="border: 1px solid #444; padding: 3px;">Data Importações    </th>
+                                <th scope="col" style="border: 1px solid #444;padding: 3px;">Visualizar detalhes    </th>
                                 
                             </tr>
                         </thead>
@@ -50,9 +50,9 @@ if(isset($_SESSION['msg'])){
                         <tbody>
                                 
                             <?php foreach ($this->data['listDatas'] as $imprimedata) : ?> 
-                                <tr>
+                                <tr "border: 1px solid #444;padding: 3px;">
                                                 
-                                    <td>
+                                    <td style="border: 1px solid #444; padding: 3px;">
                                             
                                     <?php 
                                     $dataehora = $imprimedata['DataeHora'];
@@ -63,7 +63,7 @@ if(isset($_SESSION['msg'])){
                                             
                                     </td>
 
-                                    <td>                                          
+                                    <td style="border: 1px solid #444; padding: 3px;">                                          
                                     <?php 
                                     $dataehora = $imprimedata['DataHoraImportacao'];
                                     $datasemhora = substr($dataehora, 0, 10);
@@ -73,7 +73,7 @@ if(isset($_SESSION['msg'])){
                                             
                                     </td>
 
-                                    <td>
+                                    <td style="border: 1px solid #444; padding: 3px;">
                                     
                                     <?php 
                                     $dataimportacao = $imprimedata['DataHoraImportacao'];

@@ -4,7 +4,11 @@
     
              
     ?>                               
-        <div class="menu">
+        <div class="menu" style="padding-left: 15vw;">
+
+            <br>
+
+            <br>
             <a href="<?php echo URLSISTEMA; ?>importacoes-feitas/index"> <button id="botaoacesso">Importacoes feitas</button></a>
 
             <a href="<?php echo URLSISTEMA; ?>usuarios/index"> <button id="botaoacesso">Usuarios</button></a>

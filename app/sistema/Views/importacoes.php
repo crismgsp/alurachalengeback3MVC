@@ -14,7 +14,7 @@ if(isset($this->data['form'][0])) {
 
 ?>
         <br><br>
-        <p style="color: darkblue;"> <?php echo "Bem vindo " . $_SESSION['user_name']; ?> </p>
+        <p style="color: darkblue; margin-left: 15vw;"> <?php echo "Bem vindo " . $_SESSION['user_name']; ?> </p>
         <div id="titulodiv">
 
         <h3 id="titulosuperior" style="text-align: center;">Importar transações</h3> 
