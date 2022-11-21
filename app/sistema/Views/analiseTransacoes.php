@@ -93,9 +93,9 @@ if(isset($_POST['enviaMes'])){
             </tbody>
         </table>
 
-        <?php }else{
+        <?php } /*else{
             echo "Este mês selecionado não tem transações suspeitas";
-        }   
+        }   */
     }?> 
     
 <?php
@@ -128,9 +128,9 @@ if(isset($_POST['enviaMes'])){
                 <?php endforeach; ?> 
             </tbody>
         </table>
-    <?php }else{
+    <?php } /*else{
         echo "Este mês selecionado não tem conta suspeita";
-    }  
+    }  */
 }            
  
 
@@ -160,7 +160,11 @@ if(isset($_POST['enviaMes'])){
                 <?php endforeach; ?> 
             </tbody>
         </table>
-    <?php }else{
+    <?php } /*else{
         echo "Este mes selecionado não tem agencia suspeita";
-    }
-} ?>    
+    } */
+}    
+
+if(isset($_POST['enviaMes']) && (empty($contaSuspeita)) && (empty($agenciaSuspeita)) && (empty($transacaoSuspeita))) {
+    echo "Este mês selecionado não tem conta, nem agencia e nem transação suspeita";
+} ?>
