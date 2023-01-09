@@ -4,7 +4,7 @@
     
              
     ?>                               
-        <div class="menu" style="padding-left: 15vw;">
+        <div class="menu">
 
             <br>
 
@@ -17,7 +17,7 @@
 
             <a href="<?php echo URLSISTEMA; ?>importacoes/index"> <button id="botaoacesso">Fazer importações</button></a>
 
-            <a href="<?php echo URLSISTEMA; ?>logout/index"><button class="logout">Logout</button></a>
+            <a href="<?php echo URLSISTEMA; ?>logout/index"><button class="logout" id="botaoacesso">Logout</button></a>
 
         </div>  
 

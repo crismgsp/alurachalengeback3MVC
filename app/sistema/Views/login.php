@@ -1,10 +1,10 @@
 
   
-        <div id="cabecalho">
-            <h1 id="bemvindo" style="text-align: center;"> Bem vindo ao Sistema de Importações de Transações financeiras</h1>
+        
+            <p id="bemvindo"> Bem vindo ao Sistema de Importações de Transações financeiras</p>
             
               
-        </div>
+        
         <br>
         <?php
         if(isset($_SESSION['msg'])) {
@@ -15,7 +15,7 @@
         <span id="msg" style="text-align: center;"></span>
         <br>
 
-        <div id="acesso" style="width: 40vw; background-color: rgba(112, 128, 122, 0.284);padding: 5vw; padding-left: 10vw;margin-left: 20vw;">
+        <div id="acesso" >
             <p>Para fazer importações e acessar os usuários cadastrados faça seu login  </p>
 
             <br><br>

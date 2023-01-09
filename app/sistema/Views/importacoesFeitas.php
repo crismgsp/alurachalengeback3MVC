@@ -37,7 +37,7 @@ if(isset($_SESSION['msg'])){
 
                 <div class="tabela1" style="padding: 4px; padding-left: 5vw;">
 
-                    <table  id="tabela1" style="border: 1px solid #444;">    
+                    <table  id="tabela1" >    
                         <thead id="titulo1">
                             <tr id="transacoes">
                                 <th scope="col" style="border: 1px solid #444; padding: 3px;">Data Transações    </th>

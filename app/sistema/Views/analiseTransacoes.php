@@ -21,18 +21,18 @@ if(isset($this->data['form'])) {
     <label>Escolha um mês pra analise</label>
 
     <select name="selecao">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-        <option>9</option>
-        <option>10</option>
-        <option>11</option>
-        <option>12</option>
+        <option value="1">janeiro</option>
+        <option value="2">fevereiro</option>
+        <option value="3">março</option>
+        <option value="4">abril</option>
+        <option value="5">maio</option>
+        <option value="6">junho</option>
+        <option value="7">julho</option>
+        <option value="8">agosto</option>
+        <option value="9">setembro</option>
+        <option value="10">outubro/option>
+        <option value="11">novembro</option>
+        <option value="12">dezembro</option>
 
     </select>
 

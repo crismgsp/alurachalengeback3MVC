@@ -20,8 +20,7 @@ if(isset($this->data['form'])) {
         ?>  
         <span id="msg"></span>
 
-        <div id="criarUsuario" style = "border-style: solid;  border-color: black; background-color: rgba(161, 200, 218, 0.464); margin-left: 30vw;
-        margin-right: 15vw; padding: 4vw ; padding-left: 4vw; width: 40vw;">
+        <div id="criarUsuario" >
 
             <form method="POST" action="" id="form-add-user">
         
@@ -49,7 +48,6 @@ if(isset($this->data['form'])) {
                 value="<?php echo $Email; ?>" required><br><br>
 
                 
-
                 <?php 
                 $Senha = "";
                 

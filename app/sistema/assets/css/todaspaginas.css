@@ -1,25 +1,33 @@
 /* pagina inicial */
 
-#cabecalho{
-	width: 100%;
-	display: inline-block;
-    text-align: center;
-	text-decoration-color: aquamarine;
-}
 
 #bemvindo {
 	width: 80%;
-	display: inline-block;
+	font-size: 16px;
+	margin-left: 10vw;
+	margin-top: 5vh;
+	
+}
+
+.menu {
+    padding-left: 15vw;
 }
 
 #acesso {
-    width: 50vw;
-    background-color: rgba(112, 128, 122, 0.284);
-    padding: 10vw;
-    padding-left: 20vw;
+    width: 60vw;
+    background-color: #d9e2e5;
+    padding: 4vw;
+    padding-left: 10vw;
     margin-left: 10vw;
 }
 
+
+#form-login {
+    background-color: rgba(161, 200, 218, 0.464);
+    padding: 10vw;
+    border-style: solid;
+    border-color: black;
+}
 
 #botaologin {
 	display: inline-block;
@@ -46,6 +54,17 @@
 /* style */
 body {
     background-color: rgba(207, 209, 209, 0.161);
+}
+
+#criarUsuario {
+    border-style: solid;  
+    border-color: black; 
+    background-color: rgba(161, 200, 218, 0.464); 
+    margin-left: 30vw;
+    margin-right: 15vw; 
+    padding: 4vw ; 
+    padding-left: 4vw; 
+    width: 40vw;
 }
 
 
@@ -271,3 +290,61 @@ nav a {
 	font-size: 22px;
 	text-decoration: none;
 }
+
+@media (max-width: 821px){
+    #acesso {	
+    width: 80vw;
+    
+    padding: 10vw;
+    padding-left: 10vw;
+    margin-left: 10vw;
+	
+	}
+	#bemvindo {
+	width: 80%;
+	font-size: 14px;
+	}
+	#form-login {
+    background-color: rgba(161, 200, 218, 0.464);
+    padding: 5vw;
+    
+    }
+    
+    #criarUsuario {
+     
+    margin-left: 15vw;
+    
+    padding: 4vw ; 
+    padding-left: 4vw; 
+    width: 80vw;
+    }
+    
+    #form-add-user {
+        width: 80%;
+    }
+    
+    .menu {
+    padding-left: 1vw;
+    }
+    
+    #botaoacesso {
+	border-radius: 20px;
+	padding: 0vh;
+	border-style: solid;
+   
+
+}
+}
+
+@media (max-width: 414px){
+    #criarUsuario {
+    
+   
+    margin-left: 10vw;
+    
+    padding: 4vw ; 
+    padding-left: 4vw; 
+    width: 85vw;
+    }   
+    
+}    
