@@ -19,6 +19,8 @@ class ModLogin
         
         $this->data = $data;
 
+        
+
         $viewUser = new \Sistema\Models\helper\ModRead();
      
         $viewUser->fullRead("SELECT id, Nome,  Email, Senha, Statuss FROM usuarios WHERE Email
