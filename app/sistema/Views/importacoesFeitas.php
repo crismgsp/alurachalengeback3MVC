@@ -77,6 +77,9 @@ if(isset($_SESSION['msg'])){
                                     
                                     <?php 
                                     $dataimportacao = $imprimedata['DataHoraImportacao'];
+                                    $dataimportacao = str_replace(" ", "Hora" , $dataimportacao);
+                                
+                                    
                                     echo "<a href='".URLSISTEMA."importacoes-detalhadas/index/$dataimportacao'><Button>Ver detalhes</Button></a>"; 
                                     ?>
                                     </td>

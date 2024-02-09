@@ -41,11 +41,9 @@ class ModImportacoesDetalhadas
         $explodeurl = explode("index/", $url);
         $DataImportacaoalt = $explodeurl[1];
             
-        $DataImportacao = str_replace("%20", " ", $DataImportacaoalt);
+        $DataImportacao = str_replace("Hora", " ", $DataImportacaoalt);
 
-        //var_dump($DataImportacao);
-        //exit();
-            
+                   
           
         //instancia o helper generico para obter os dados do banco de dados, ele quer ordernar de forma decrescente pra aparecer os ultimos inseridos primeiro
         $listImport= new \Sistema\Models\helper\ModRead();
