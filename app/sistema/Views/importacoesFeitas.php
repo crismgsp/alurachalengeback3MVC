@@ -28,14 +28,14 @@ if(isset($_SESSION['msg'])){
         <div id="informacoes">
 
             <div id="cabecalho">
-                <h2 style="padding: 4px; padding-left: 6vw;"> Importações realizadas</h2>
+                <h2> Importações realizadas</h2>
 
               
             </div>
 
                             
 
-                <div class="tabela1" style="padding: 4px; padding-left: 5vw;">
+                <div class="tabela1">
 
                     <table  id="tabela1" >    
                         <thead id="titulo1">

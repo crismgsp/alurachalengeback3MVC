@@ -3,28 +3,29 @@
 
 #bemvindo {
 	width: 80%;
-	font-size: 16px;
-	margin-left: 10vw;
+	font-size: 22px;
+	margin-left: 25vw;
 	margin-top: 5vh;
 	
 }
 
 .menu {
     padding-left: 15vw;
+    background-color: rgba(39, 39, 47, 0.511);
 }
 
-#acesso {
-    width: 60vw;
-    background-color: #d9e2e5;
-    padding: 4vw;
-    padding-left: 10vw;
-    margin-left: 10vw;
+
+
+#informacoes {
+    margin-left: 30vw;
 }
 
 
 #form-login {
+    margin-left: 20vw;
+    width: 40%;
     background-color: rgba(161, 200, 218, 0.464);
-    padding: 10vw;
+    padding: 5vw;
     border-style: solid;
     border-color: black;
 }
@@ -42,12 +43,12 @@
 
 #botaoacesso {
 	display: inline-block;
-	background-color: rgba(0, 0, 255, 0.719);
+	background-color: #ffffff;
 	border-style: solid;
     border-color:rgba(12, 12, 34, 0.81);
-	color: #ffffff;
+	color: #171515;
 	padding: 0.5vh;
-    border-radius: 15px;
+    border-radius: 8px;
 
 }
 
@@ -126,6 +127,10 @@ body {
    display: block;
 }
 
+#botaoverusuario {
+    margin-left: 40vw;
+}
+
 /* login */
 
 #iniciosessao {
@@ -152,6 +157,10 @@ body {
 #titulo {
     
     text-align: center;
+}
+
+.selecao {
+    margin-left: 20vw;
 }
 
 #novo {
@@ -253,6 +262,10 @@ header{
     
 }
 
+#msg{
+    margin-left: 20vw;
+}
+
 
 .detalhaimportacao {
     background-color: rgba(0, 174, 255, 0.575);
@@ -262,8 +275,9 @@ header{
 }
 
 #cabecalho {
-    display: inline-block;
-    width: 25%;
+    display: inline;
+    
+    
 }
 
 .logout {
@@ -300,9 +314,19 @@ nav a {
     margin-left: 10vw;
 	
 	}
+
+    #msg{
+        margin-left: 10vw;
+    }
+
+    #botaoverusuario {
+        margin-left: 20vw;
+    }
+
 	#bemvindo {
 	width: 80%;
 	font-size: 14px;
+    margin-left: 10px;
 	}
 	#form-login {
     background-color: rgba(161, 200, 218, 0.464);
@@ -312,15 +336,19 @@ nav a {
     
     #criarUsuario {
      
-    margin-left: 15vw;
-    
-    padding: 4vw ; 
-    padding-left: 4vw; 
-    width: 80vw;
+        margin-left: 15vw;
+        
+        padding: 3vw ; 
+        padding-left: 4vw; 
+        width: 60vw;
     }
     
     #form-add-user {
-        width: 80%;
+        width: 90%;
+    }
+
+    .selecao {
+        margin-left: 10vw;
     }
     
     .menu {
@@ -333,7 +361,11 @@ nav a {
 	border-style: solid;
    
 
-}
+    }
+
+    #informacoes {
+        margin-left: 8vw;
+    }
 }
 
 @media (max-width: 414px){
@@ -345,6 +377,28 @@ nav a {
     padding: 4vw ; 
     padding-left: 4vw; 
     width: 85vw;
-    }   
+    }  
+
+    #msg{
+        margin-left: 2vw;
+    }
+
+    #informacoes {
+        margin-left: 0vw;
+    }
+
+    #botaoverusuario {
+        margin-left: 15vw;
+    }
+
+    .selecao {
+        margin-left: 1vw;
+    }
+
+    #enviames{
+        margin-top: 1px;
+    }
+
+   
     
 }    

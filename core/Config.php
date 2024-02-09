@@ -9,7 +9,7 @@ abstract class Config
     protected function configAdmin(): void
     {
         define('URL', 'http://localhost/');
-        define('URLSISTEMA', 'http://localhost/sistema/');
+        define('URLSISTEMA', 'http://localhost/alurachalengeback3MVC/');
 
         define('CONTROLLER', 'Login');
         define('METODO', 'index');

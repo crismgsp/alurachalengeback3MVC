@@ -72,4 +72,4 @@ if(isset($this->data['form'])) {
         <br>
         <br>
 
-        <a href="<?php echo URLSISTEMA; ?>usuarios-cadastrados/index"> <button id="botaoacesso" >Ver usuários cadastrados</button></a>
+        <a href="<?php echo URLSISTEMA; ?>usuarios-cadastrados/index"> <button id="botaoverusuario" >Ver usuários cadastrados</button></a>

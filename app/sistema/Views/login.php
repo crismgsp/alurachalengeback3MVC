@@ -1,7 +1,7 @@
 
   
         
-            <p id="bemvindo"> Bem vindo ao Sistema de Importações de Transações financeiras</p>
+            <p id="bemvindo"> Sistema de Importações de Transações financeiras</p>
             
               
         
@@ -16,7 +16,7 @@
         <br>
 
         <div id="acesso" >
-            <p>Para fazer importações e acessar os usuários cadastrados faça seu login  </p>
+            
 
             <br><br>
 

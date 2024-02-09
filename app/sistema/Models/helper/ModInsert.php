@@ -21,7 +21,7 @@ class ModInsert extends ModConn
     private string $query;
     private object $conn;
 
-    function getResult(): string
+    function getResult()
     {
         return $this->result;
     }
@@ -44,7 +44,8 @@ class ModInsert extends ModConn
         $coluns = implode(',', array_keys($this->data));
         
         $values = ':'. implode(', :', array_keys($this->data));
-        
+
+                
         $this->query = "INSERT INTO {$this->table} ($coluns) VALUES ($values)";
         //var_dump($this->query);
         $this->exeInstruction();
@@ -55,10 +56,13 @@ class ModInsert extends ModConn
         //instanciando a conexao
         $this->connection();
         try{
+            //var_dump($this->data);
+            //exit();
             //se der certo a conexao executa a o atributo que recebeu a query preparada
             $this->insert->execute($this->data);
             //para recuperar o ultimo id inserido usa lastInsertId
             $this->result = $this->conn->lastInsertId();
+            
         }catch(PDOException $err){
             $this->result = null;
             //se der algum erro ver o que posso fazer neste pedaço pois como o professor usa php 8
@@ -70,6 +74,7 @@ class ModInsert extends ModConn
     {
         $this->conn = $this->connectDb();
         //preparando a query e atribuindo para o atributo $this->insert
+        
         $this->insert = $this->conn->prepare($this->query);
     }
 
