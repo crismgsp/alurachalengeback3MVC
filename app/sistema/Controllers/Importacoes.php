@@ -14,8 +14,9 @@ class Importacoes
     public function index(): void
     {
         
-        
-        $this->dataForm = $_FILES['file'];
+        if(!empty($_FILES['file'])){
+            $this->dataForm = $_FILES['file'];
+        }       
         
 
                         
