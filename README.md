@@ -19,8 +19,7 @@ https://analisesdetransacoes.crismgsp.com/     <br>
 usuario: admin@email.com.br    senha: 123999 <br>
 
 <p>Exemplo de arquivo CSV que funciona para importar (observar como deve ficar a data)</p>
-<p><img src='app/sistema/assets/imagens/exemploCSV.png' alt="exemplo de CSV"/> </p>
-
+<img src='app/sistema/assets/imagens/exemploCSV.png' alt="exemplo de CSV"/> 
 
 Alguns arquivos mais genericos, aproveitei de um curso que estou fazendo e o link<br>
 deste curso que é muito completo e o professor ensina muitas coisas detalhadamente e explica o porque de se fazer assim é:<br>
