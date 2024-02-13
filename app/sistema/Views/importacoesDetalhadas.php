@@ -34,19 +34,6 @@
         </tbody>
     </table>
 
-    <?php
-
-    $url = str_replace("Novo/", "", $_SERVER["REQUEST_URI"]);
-                $explodeurl = explode("=", $url);
-
-                            
-                $usuariomodificado = $explodeurl[1];
-            
-                $usuario = str_replace("%27", " ", $usuariomodificado);
-            
-
-    ?>
-
-
+  
     <a href="<?php echo URLSISTEMA; ?>importacoes-feitas/index"><button>Voltar para importações feitas</button></a>
     
