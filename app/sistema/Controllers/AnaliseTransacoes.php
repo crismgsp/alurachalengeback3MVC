@@ -27,7 +27,8 @@ class AnaliseTransacoes
         if(!empty($this->dataForm['enviaMes'])) {
             $contasuspeita = new \Sistema\Models\ModAnaliseTransacoes();
             $contasuspeita->contaSuspeita();
-                  
+			
+			                  
             
             if($contasuspeita->getResult()){
                            
@@ -36,6 +37,9 @@ class AnaliseTransacoes
                 $this->data['contasuspeita2'] = $contasuspeita->getResultBd2();
 
                 $this->data['contas'] = array_merge($this->data['contasuspeita1'], $this->data['contasuspeita2']);
+				
+				//var_dump($this->data['contas']);
+				//exit();
 
                 //parte das contas suspeitas
 
@@ -78,8 +82,9 @@ class AnaliseTransacoes
 
 
                 $this->data['contasuspeita'] = $this->contasuspeita;
-                
-                //parte das agencias suspeitas
+				
+				//parte das agencias suspeitas
+			 	
 
                 $agenciasuspeita1 = array();
 
@@ -102,25 +107,47 @@ class AnaliseTransacoes
                         );
                     }
                 }
+				
+				//var_dump($agenciasuspeita1);
+				//exit();
            
-         
+           
    
                 $agenciasuspeitatotal = array();
         
                 foreach($agenciasuspeita1 as $suspeita ) {
-                    $soma = $suspeita['Soma'];
+                    $soma = intval($suspeita['Soma']);
+					//var_dump($soma);
+					//echo "-";
+					
                     if($soma > 1000000000) {
                         array_push($agenciasuspeitatotal, $suspeita);
                     }
                 }
+				
+				//var_dump($agenciasuspeitatotal);
+				//exit();
 
                 
 
                 $this->data['agenciasuspeita'] = $agenciasuspeitatotal;
+				
+				//var_dump($this->data['agenciasuspeita']);
+				//exit();   aqui aparece informacao para o mes que nao tem agencia suspeita...mas ao fazer o var_dump na view nao está aparecendo
+	
+				
+				
+			}
 
+			
+                
+                
                 //parte das transacoes suspeitas
                     $transacaosuspeita = new \Sistema\Models\ModAnaliseTransacoes();
                     $transacaosuspeita->transacaosuspeita();
+					
+					//var_dump($transacaosuspeita->getResultBd());
+					//exit();
                         
                     
                     if($transacaosuspeita->getResult()){
@@ -135,22 +162,24 @@ class AnaliseTransacoes
                             }
                         }
                         $this->data['transacaosuspeita'] = $transacaosuspeita;
-
+						
+						
                         
-                    }else{
-                            
-                        $this->data['contasuspeita'] = [];
-                        $this->data['agenciasuspeita'] = [];
-                        $this->data['transacaosuspeita'] = [];
                     }
                         
             
                 
-            }
+            
    
-        } 
+        }else{
+                            
+                $this->data['contasuspeita'] = [];
+                $this->data['agenciasuspeita'] = [];
+                $this->data['transacaosuspeita'] = [];
+            } 
 
-        
+        //var_dump($this->data);
+		//exit();
     
         $loadView = new \Core\ConfigView("sistema/Views/analiseTransacoes", $this->data);
                 

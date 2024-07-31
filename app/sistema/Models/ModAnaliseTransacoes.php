@@ -45,7 +45,14 @@ class ModAnaliseTransacoes
         $this->parseString = "";
 
         
-        $mesescolhido = $_POST['selecao'];  
+        //$mesescolhido = $_POST['selecao'];  comentei este pois agora o valor mudou...para gerar o valor do mes escolhido vai ter que juntar o mes e ano
+		$mes = $_POST['selecao'];
+		$ano = $_POST['ano'];
+		
+		$mesescolhido = "$mes$ano";
+		$mesescolhido = intval($mesescolhido);
+        //var_dump($mesescolhido);
+        //exit();  		
 
         
         $contassuspeitas = new \Sistema\Models\helper\ModRead();
@@ -53,7 +60,8 @@ class ModAnaliseTransacoes
         '$mesescolhido' GROUP BY ContaOrigem, BancoOrigem, AgenciaOrigem", $this->parseString);
 
         $this->resultBd = $contassuspeitas->getResult();
-
+		
+		
         $contassuspeitas2 = new \Sistema\Models\helper\ModRead();
         $contassuspeitas2->fullRead("SELECT BancoDestino as Banco, AgenciaDestino as Agencia, ContaDestino as Conta, Sum(Valor) as Soma FROM transacoes WHERE Mes = '$mesescolhido' 
         GROUP BY ContaDestino, BancoDestino, AgenciaDestino", $this->parseString);
@@ -64,7 +72,7 @@ class ModAnaliseTransacoes
         if(($this->resultBd) and ($this->resultBd2)){
             $this->result = true;
         }else{
-            $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!!!</p> nao é aqui que ta acessando  o erro..linha 49 admslistusers";
+            $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Nenhum usuário encontrado!!!</p> ";
             $this->result = false;
         }
     }
@@ -74,7 +82,11 @@ class ModAnaliseTransacoes
         $this->parseString = "";
 
         
-        $mesescolhido = $_POST['selecao'];  
+        $mes = $_POST['selecao'];
+		$ano = $_POST['ano'];
+		
+		$mesescolhido = "$mes$ano";
+		$mesescolhido = intval($mesescolhido);
 
         
         $transacaosuspeita = new \Sistema\Models\helper\ModRead();

@@ -134,12 +134,22 @@ class ModImportacoes
                
                 $usuario = $_SESSION['user_name'];
                     
-                $mes = substr($this->dados['DataeHora'], 6, 2);
+                $mes = substr($this->dados['DataeHora'], 5, 2);
+				
+				//vou acrescentar este pedaço abaixo para fazer um teste:
+				$ano = substr($this->dados['DataeHora'], 0, 4);
+				
+				$mesAno = "$mes$ano";
+				
+				//var_dump($mesAno);
+				//exit();
                 
 
                 $this->dados['Usuario'] = $usuario;
 
-                $this->dados['Mes'] = intval($mes);
+                //$this->dados['Mes'] = intval($mes);
+				
+				$this->dados['Mes'] = intval($mesAno);
 
                                 
                 $inserirTabela = new \Sistema\Models\helper\ModInsert();

@@ -32,12 +32,19 @@ if(isset($this->data['form'])) {
         <option value="12">dezembro</option>
 
     </select>
+	<br>
+	
+	<label>Digite um ano para análise com 4 dígitos</label>
+	<input name="ano"></input>
 
     <input type="submit" name="enviaMes" id="enviames" value="Após selecionar clique aqui" />
 
 </form>
 
 <?php
+
+//var_dump($this->data);
+//exit();
 
 
 $contaSuspeita = $this->data['contasuspeita'];
@@ -46,6 +53,15 @@ $transacaoSuspeita = $this->data['transacaosuspeita'];
 
 
 if(isset($_POST['enviaMes'])){ 
+
+	$mes = $_POST['selecao'];
+	$ano = $_POST['ano'];
+	?>
+	<br>
+	
+	<h4 style = "color: red; text-align: center;">Período escolhido: <?php echo "$mes/$ano"; ?> </h4>
+	
+	<?php
     if(!empty($transacaoSuspeita)){?>
         </div>
 
