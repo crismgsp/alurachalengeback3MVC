@@ -87,7 +87,9 @@ if(isset($_POST['enviaMes'])){
             <tbody>
                 
                 
-                <?php foreach ($this->data['transacaosuspeita'] as $contas) : ?>
+                <?php foreach ($this->data['transacaosuspeita'] as $contas) : 
+								
+				?>
                     <tr>
                         <td><?php echo $contas['BancoOrigem']; ?></td>
                         <td><?php echo $contas['AgenciaOrigem']; ?></td>
@@ -98,7 +100,7 @@ if(isset($_POST['enviaMes'])){
                         <td><?php echo $contas['Valor']; ?></td>
                         <td><?php echo $contas['DataeHora']; ?></td>
                         <td><?php echo $contas['DataHoraImportacao']; ?></td>
-                        <td><?php echo $contas['Mes']; ?></td>
+                        <td><?php /*echo $contas['Mes'];*/echo "$mes/$ano"; ?></td>
                         
 
                     </tr>
