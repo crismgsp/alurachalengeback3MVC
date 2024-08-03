@@ -326,12 +326,12 @@ nav a {
 
 @media (max-width: 821px){
     #acesso {	
-    width: 80vw;
-    
-    padding: 10vw;
-    padding-left: 10vw;
-    margin-left: 10vw;
-	
+		width: 80vw;
+		
+		padding: 10vw;
+		padding-left: 10vw;
+		margin-left: 10vw;
+		
 	}
 
     #msg{
@@ -343,14 +343,16 @@ nav a {
     }
 
 	#bemvindo {
-	width: 80%;
-	font-size: 14px;
-    margin-left: 10px;
+		width: 80%;
+		font-size: 14px;
+		margin-left: 10px;
 	}
 	#form-login {
-    background-color: rgba(161, 200, 218, 0.464);
-    padding: 5vw;
-    
+		background-color: rgba(161, 200, 218, 0.464);
+		padding: 5vw;
+		margin-left: 10vw;
+		width: 80%;
+	    
     }
     
     #criarUsuario {
@@ -388,6 +390,29 @@ nav a {
         margin-left: 8vw;
     }
 }
+
+
+@media (max-width: 650px){
+	
+	#acesso {	
+		width: 90vw;
+		
+		padding: 10vw;
+		
+		margin-left: 0vw;
+		
+	}
+   
+	#form-login {
+		background-color: rgba(161, 200, 218, 0.464);
+		padding: 4vw;
+		margin-left: 8vw;
+		width: 90%;
+	    
+    }
+
+}
+
 
 @media (max-width: 414px){
     #criarUsuario {
