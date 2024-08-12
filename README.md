@@ -2,7 +2,8 @@
 
 <p>Abaixo o link do site deste projeto refatorado</p>
 <p>http://analisesdetransacoesmvc.crismgsp.com/login/index</p><br>
-usuario: admin@email.com.br    senha: 123999 <br>
+usuario: xxxxx@email.com.br    senha: xxxxxx <br>
+<p>Obs: Caso queira testar com usuario e senha entre em contato comigo </p>
 
 OBS: meu foco neste projeto não é na parte visual, mas para ficar aceitavel usei um pouco de css inline, no anterior estava<br>
 um pouco melhor esta parte mas pelas mudanças que fiz aqui tive uns probleminhas para acessar os arquivos css separadamente e achei mais<br>
@@ -15,11 +16,11 @@ Apesar da aparência ter ficado um pouco menos interessante agora, este projeto 
 (Resumo) O objetivo do chalenge que participei em maio de 2022 foi criar um sistema com as seguintes opções: parte dos usuários: login e logout de usuarios, um lugar no sistema pra cadastrar, editar e excluir os usuários de forma lógica (sem excluir de verdade, apenas deixar inativo, não pode fazer login). Parte das transações financeiras: No sistema tem que ter um local para fazer upload de arquivos no formato csv (e xml tambem), este arquivo ao passar pelas validações irá ser cadastrado no banco de dados criado para o projeto. Também há uma tela onde é possível ver as importações feitas e um botão em cada linha que direciona para uma tela que detalha cada importação. 
 O projeto original está no repositorio:<br> https://github.com/crismgsp/alurachalengeback3.<br>
 e o link para acessar o site do projeto original é:<br>
-https://analisesdetransacoes.crismgsp.com/     <br>
-usuario: admin@email.com.br    senha: 123999 <br>
+
 
 <p>Exemplo de arquivo CSV que funciona para importar (observar como deve ficar a data)</p>
-<img src='app/sistema/assets/imagens/exemploCSV2.png' alt="exemplo de CSV"/> 
+<p><img src='app/sistema/assets/imagens/exemploCSV.png' alt="exemplo de CSV"/> </p>
+
 
 Alguns arquivos mais genericos, aproveitei de um curso que estou fazendo e o link<br>
 deste curso que é muito completo e o professor ensina muitas coisas detalhadamente e explica o porque de se fazer assim é:<br>
